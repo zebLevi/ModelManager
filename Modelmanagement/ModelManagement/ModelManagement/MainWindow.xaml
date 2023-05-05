@@ -1,0 +1,45 @@
+﻿<Window x:Class="ModelManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModelManagement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open" />
+                    <MenuItem Header="_Save" />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="_Cut" />
+                    <MenuItem Header="_Copy" />
+                    <MenuItem Header="_Paste" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <TabControl Grid.Row="1">
+            <TabItem Header="Create Job">
+                <views:CreateJobView />
+            </TabItem>
+            <TabItem Header="Create Model">
+                <views:CreateModelView />
+            </TabItem>
+            <TabItem Header="Add Expense To Job">
+                <views:AddExpenseToJobView />
+            </TabItem>
+        </TabControl>
+    </Grid>
+    
+</Window>

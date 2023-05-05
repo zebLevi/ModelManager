@@ -1,0 +1,35 @@
+﻿<Window x:Class="ModelManagement.Views.AddExpenseToJobView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModelManagement.Views"
+        mc:Ignorable="d"
+        Title="AddExpenseToJobView" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10">
+            <TextBlock Text="Add Expense To Job" FontSize="20" FontWeight="bold" Margin="0 0 0 25" />
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBlock Text="Amount:" Width="100" VerticalAlignment="Center" />
+                <TextBox Text="{Binding Amount}" Width="200" Margin="10 0 0 0" TextChanged="TextBox_TextChanged" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBlock Text="Date:" Width="100" VerticalAlignment="Center" />
+                <DatePicker SelectedDate="{Binding Date}" Width="200" Margin="10 0 0 0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBlock Width="100" VerticalAlignment="Center" ><Run Text="Descriptio"/><Run Language="da-dk" Text="n:"/></TextBlock>
+                <TextBox Text="{Binding Description}" Width="200" Margin="10 0 0 0" />
+            </StackPanel>
+        </StackPanel>
+
+        <Button Content="Add Expense" Width="100" Height="30" Margin="10" Grid.Row="1"
+                Command="{Binding AddExpenseCommand}" />
+    </Grid>
+</Window>
